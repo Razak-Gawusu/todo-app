@@ -1,0 +1,266 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+:root{
+  /*primary*/
+  --brightBlue: hsl(220, 98%, 61%);
+  --checkBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  
+  /*Light theme*/
+  --veryLightGray: hsl(0, 0%, 98%);
+  --veryLightGrayishBlue: hsl(236, 33%, 92%);
+  --lightGrayishBlue: hsl(233, 11%, 84%);
+  --darkGrayishBlue: hsl(236, 9%, 61%);
+  --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+  
+/* Dark Theme */
+--veryDarkBlue: hsl(235, 21%, 11%);
+--veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+--lightGrayishBlue: hsl(234, 39%, 85%);
+--lightGrayishBluehover: hsl(236, 33%, 92%);
+--darkGrayishBlue: hsl(234, 11%, 52%);
+--veryDarkGrayishBlue: hsl(233, 14%, 35%);
+--veryDarkGrayishBlue: hsl(237, 14%, 26%);
+
+font-size: 13px;
+
+font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  max-width: 100%;
+}
+
+.container{
+  width: 80%;
+  margin: auto;
+  max-width: 450px;
+}
+
+.App{
+  background-color: var(--veryLightGrayishBlue);
+  min-height: 100vh;
+}
+
+.header--wrapper{
+  background-image: url('../src/assests/images/bg-desktop-light.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+
+.header{
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1{
+  color: white;
+  font-weight: 500;
+  letter-spacing: 4px;
+  display:
+  inline;
+}
+
+.todo{
+  position: relative;
+  top: -100px;
+}
+
+.todo form{
+  width: 100%;
+  border-radius: .4rem;
+  overflow: hidden;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.todo input{
+  padding: .5rem .5rem .5rem 3.5rem;
+  border: none;
+  height: 4rem;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.todo input::placeholder{
+  font-size: .9rem;
+  color: var(--veryDarkBlue);
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.todo form .todo__tasks--radio{
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  transform:  translateY(-50%);
+
+}
+
+.todo__tasks{
+  display: flex;
+  flex-direction: column;
+  border-radius: .4rem;
+  margin: 1rem 0;
+  background-color: white;
+}
+
+.todo__tasks--task{
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 1.5rem;
+  justify-content: space-between;
+  color: var(--veryDarkBlue);
+  cursor: move;
+}
+
+.todo__tasks--task.over{
+  border: 3px dotted red;
+}
+
+.todo__tasks--task + .todo__tasks--task{
+  border-top: solid 1px var(--lightGrayishBlue);
+}
+
+.todo__tasks--wrapper{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.todo__tasks--radio{
+  height: 15px;
+  width: 15px;
+  border: solid 1px var(--lightGrayishBlue);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.todo__tasks--radio:hover{
+  background-color: var(--brightBlue);
+}
+
+.todo__tasks--image{
+  width: 12.5px;
+}
+
+.underline{
+  text-decoration: line-through;
+  color: var(--lightGrayishBlue);
+}
+
+
+.todo__tasks--info{
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  color: var(--lightGrayishBlue);
+  border-top: solid 1px var(--lightGrayishBlue);
+  
+}
+
+.todo__tasks--display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-radius: .4rem;
+  font-size: 1.25rem;
+  background-color: white;
+  color: var(--darkGrayishBlue);
+  height: 3.5rem;
+}
+
+.todo__tasks--display h5{
+  cursor: pointer;
+}
+
+.todo__tasks--display h5:hover{
+  color: var(--veryDarkBlue);
+}
+
+
+.dark{
+  background-color: var(--veryDarkGrayishBlue)  !important;
+  color: var(--lightGrayishBlue) !important;
+}
+
+.darkBody{
+  background-color: var(--veryDarkDesaturatedBlue) !important;
+}
+
+
+.todoApp--info{
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--veryDarkGrayishBlue);
+}
+
+[draggable] {
+  user-select: none;
+}
+
+
+/* - Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Bright Blue: hsl(220, 98%, 61%)
+- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+
+### Neutral
+
+### Light Theme
+
+- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Grayish Blue: hsl(236, 33%, 92%)
+- Light Grayish Blue: hsl(233, 11%, 84%)
+- Dark Grayish Blue: hsl(236, 9%, 61%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%)
+
+### Dark Theme
+
+- Very Dark Blue: hsl(235, 21%, 11%)
+- Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+- Light Grayish Blue: hsl(234, 39%, 85%)
+- Light Grayish Blue (hover): hsl(236, 33%, 92%)
+- Dark Grayish Blue: hsl(234, 11%, 52%)
+- Very Dark Grayish Blue: hsl(233, 14%, 35%)
+- Very Dark Grayish Blue: hsl(237, 14%, 26%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 18px
+
+### Font
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weights: 400, 700 */
+
+
+
+

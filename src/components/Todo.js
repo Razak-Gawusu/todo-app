@@ -94,7 +94,7 @@ function Todo({darkMode}) {
         return(
             <div className={`todo__tasks--task ${darkMode ? 'dark':''}`} key={task.id} id={task.id} draggable='true'>
                 <div className='todo__tasks--wrapper'>
-                    <div className='todo__tasks--radio' onClick={(()=>{handleIsCompleted(task.id)})}></div>
+                    <div className={`todo__tasks--radio ${task.isCompleted ? 'checked' : ''}`} onClick={(()=>{handleIsCompleted(task.id)})}></div>
                     <p className={`${task.isCompleted ? "underline": ""}`}>{task.task}</p>
                 </div>
                 <img className='todo__tasks--image' src={cross} alt='cross' onClick={()=>{handleRemoveTask(task.id)}}/>
@@ -106,7 +106,7 @@ function Todo({darkMode}) {
         return(
             <div className={`todo__tasks--task ${darkMode ? 'dark':''}`} key={task.id} id={task.id} draggable='true'>
                 <div className='todo__tasks--wrapper'>
-                    <div className='todo__tasks--radio' onClick={(()=>{handleIsCompleted(task.id)})}></div>
+                    <div className={`todo__tasks--radio ${task.isCompleted ? 'checked' : ''}`} onClick={(()=>{handleIsCompleted(task.id)})}></div>
                     <p className={`${task.isCompleted ? "underline": ""}`}>{task.task}</p>
                 </div>
                 <img className='todo__tasks--image' src={cross} alt='cross' onClick={()=>{handleRemoveTask(task.id)}}/>
@@ -118,7 +118,7 @@ function Todo({darkMode}) {
         return(
             <div className={`todo__tasks--task ${darkMode ? 'dark':''}`} key={task.id} id={task.id} draggable='true'>
                 <div className='todo__tasks--wrapper'>
-                    <div className='todo__tasks--radio' onClick={(()=>{handleIsCompleted(task.id)})}></div>
+                    <div className={`todo__tasks--radio ${task.isCompleted ? 'checked' : ''}`} onClick={(()=>{handleIsCompleted(task.id)})}></div>
                     <p className={`${task.isCompleted ? "underline": ""}`}>{task.task}</p>
                 </div>
                 <img className='todo__tasks--image' src={cross} alt='cross' onClick={()=>{handleRemoveTask(task.id)}}/>
@@ -176,7 +176,7 @@ function Todo({darkMode}) {
                 <div>
                     {taskLeft()} items left
                 </div>
-                <div onClick={handleClearAllCompletedTasks} >
+                <div className='clearTask' onClick={handleClearAllCompletedTasks}>
                     Clear Completed
                 </div>
             </div>

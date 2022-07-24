@@ -24,7 +24,7 @@
 --veryDarkGrayishBlue: hsl(233, 14%, 35%);
 --veryDarkGrayishBlue: hsl(237, 14%, 26%);
 
-font-size: 13px;
+font-size: clamp(13px, 1.25vw, 16px);
 
 font-family: 'Josefin Sans', sans-serif;
 }
@@ -49,7 +49,7 @@ img{
 .container{
   width: 80%;
   margin: auto;
-  max-width: 450px;
+  max-width: 950px;
 }
 
 .App{
@@ -154,12 +154,17 @@ img{
   cursor: pointer;
 }
 
+.todo__tasks--radio.checked{
+  background: linear-gradient(120deg, royalblue, royalblue, purple );
+}
+
 .todo__tasks--radio:hover{
-  background-color: var(--brightBlue);
+  background: linear-gradient(120deg, royalblue, royalblue, purple );
 }
 
 .todo__tasks--image{
   width: 12.5px;
+  cursor: pointer;
 }
 
 .underline{
@@ -190,6 +195,10 @@ img{
   height: 3.5rem;
 }
 
+.clearTask{
+  cursor: pointer;
+}
+
 .todo__tasks--display h5{
   cursor: pointer;
 }
@@ -213,10 +222,6 @@ img{
   padding: 2.5rem;
   text-align: center;
   color: var(--veryDarkGrayishBlue);
-}
-
-[draggable] {
-  user-select: none;
 }
 
 
